@@ -85,10 +85,19 @@ nav ul li a:hover {
 
   /* Add your about section styles here */
 
-   
+   .About {
+    color: #333;
+    padding: 20px 0;
+    margin: 20px 20px;
+    text-align: center;
     
-
+   }
  
+   .About h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+   }
+   
 
   /* Add your projects section styles here */
  
