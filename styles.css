@@ -47,16 +47,35 @@ header{
   }
   
 nav ul li a:hover {
-    color: #f1f1f1;
-text-decoration: underline white;
-  color:white;
+    color: orange;
   padding: 10px;
 }
 
 
   /* Add your hero section styles here */
 
+  .hero {
+ background-color: orange;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    margin: 20px  20px;
+  }
 
+  .cta {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: solid 2px white;
+    margin:10px 0;
+  }
+
+.cta a {
+    color:orange;
+    text-decoration: none;
+    font-weight: bold;
+
+  }
 
 
 
