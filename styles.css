@@ -97,12 +97,45 @@ nav ul li a:hover {
     font-size: 2em;
     margin-bottom: 20px;
    }
-   
+
 
   /* Add your projects section styles here */
  
+  .projects {
+    padding: 20px 0;
+    margin: 20px 20px;
+    text-align: center;
+  }
+
+  .projects h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+.project-list {
+    display: flex;
+    justify-content: center;
+    gap:20px; 
+
+  }
 
 
+  .project {
+    background-color: #f4f4f4;
+    padding: 40px;
+    border-radius: 8px;
+    margin: 10px;
+    width: 300px;
+    transition: transform 0.3s ease;
+    }
+  
+  
+div.project:hover {
+ transform: scale(1.05);
+}
+
+
+ 
   
 
 
