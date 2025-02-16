@@ -146,12 +146,16 @@ div.project:hover {
     background: rgb(242, 242, 242);
     padding: 50px 20px;
     border-radius: 5px;
-    margin: 80px 20px;
-}
+    margin: 80px 20px; 
+  }
 
+ 
+#testimonials:hover {
+  box-shadow: 006px 6px 6px 6px #ccc;
+}
 #testimonials h2 {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 #testimonials .testimonial {
    text-align: center;
