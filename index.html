@@ -3,8 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>My Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "dLZTj0d5O9tacoaWO",
+      });
+   })();
+</script>
+
 </head>
 <body>
   <!-- Add your header with navigation here -->
@@ -27,7 +38,7 @@
     <section class="hero">
       <h1>Welcome to My Portfolio</h1>
       <p>I'm a passionate developer exploring the world of code.</p>
-      <button class="cta"><a href="#projects">View  Project </a></button>  
+      <a href="#projects" class="cta">View Project</a>
   </section>
   
     
@@ -36,7 +47,7 @@
     <!-- Add your about section here -->
 
     
-    <section class="About" id="about">
+    <section class="about" id="about">
       <h2>About Me</h2>
       <p>Hello! I'm a web developer with a love for building creative and user-friendly websites. 
       With a strong foundation in HTML, CSS, and JavaScript, I aim to create engaging online experiences.</p>
@@ -97,7 +108,7 @@
           <input type="text" id="name" placeholder="Your Name" required>
           <input type="email" id="email" placeholder="Your Email" required>
           <textarea id="message" placeholder="Your Message" required></textarea>
-          <button type="submit" class="btn">Send</button>
+          <button type="submit" class="btn" onclick="sendMail()">Send</button>
           <p id="formMessage"></p>
       </form>
   </section>
@@ -113,5 +124,7 @@
  
 
   <script src="index.js"></script>
+ 
+
 </body>
 </html>

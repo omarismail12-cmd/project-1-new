@@ -58,8 +58,8 @@ nav ul li a:hover {
  background-color: orange;
     color: white;
     text-align: center;
-    padding: 100px 0;
-    margin: 20px  20px;
+    padding: 50px 0;
+    margin: 20px 20px;
   }
 
   .cta {
@@ -70,22 +70,24 @@ nav ul li a:hover {
     margin:10px 0;
   }
 
-.cta a {
-    color:orange;
-    text-decoration: none;
-    font-weight: bold;
 
+
+a.cta {
+    color: orange;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: solid 2px white;
+    margin: 10px 0;
+    display: inline-block;
   }
 
-
-
-
-   
+ 
 
 
   /* Add your about section styles here */
 
-   .About {
+   .about {
     color: #333;
     padding: 20px 0;
     margin: 20px 20px;
@@ -93,7 +95,7 @@ nav ul li a:hover {
     
    }
  
-   .About h2 {
+   .about h2 {
     font-size: 2em;
     margin-bottom: 20px;
    }
@@ -141,7 +143,7 @@ div.project:hover {
 
   /* Add your contact section styles here */
   #testimonials {
-    background: rgb(233, 232, 232);
+    background: rgb(242, 242, 242);
     padding: 50px 20px;
     border-radius: 5px;
     width: 100%;
@@ -160,7 +162,7 @@ div.project:hover {
 
 .testimonial-container {
     position: relative;
-    height: 100px;
+    min-height: 150px;
 }
 
 .testimonial {
@@ -175,13 +177,6 @@ div.project:hover {
 }
 
 
-.avatar {
-    width: 50px;
-    height: 50px;
-    background: gray;
-    border-radius: 50%;
-    margin: auto;
-}
 
 
 
@@ -246,7 +241,7 @@ div.project:hover {
       padding: 50px 0;
     }
   
-    .About {
+    .about {
       padding: 20px 0;
     }
   
