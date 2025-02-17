@@ -1,9 +1,9 @@
 // Wait for DOM to load
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
   const formMessage = document.getElementById("formMessage");
 
-  form.addEventListener("submit", function(event) {
+  form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const name = document.getElementById("name").value.trim();
@@ -21,16 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Success message
-    showMessage("Message sent successfully!", "green");
-
-    // Send email using EmailJS
-    sendMail(name, email, message);
-
-    setTimeout(() => {
+    // Send email using EmailJS API
+    try {
+      await sendMail(name, email, message);
+      showMessage("Message sent successfully!", "green");
       form.reset();
-      formMessage.textContent = ""; // Clear message after reset
-    }, 2000);
+    } catch (error) {
+      console.error("Error sending email:", error);
+      showMessage("Failed to send email. Try again later.", "red");
+    }
   });
 
   // Email validation function
@@ -45,17 +44,36 @@ document.addEventListener('DOMContentLoaded', () => {
     formMessage.style.color = color;
   }
 
-  // Send email with EmailJS
-  function sendMail(name, email, message) {
-    const params = { name, email, message, subject: "Message from Portfolio" };
+  // Send email using EmailJS API
+  async function sendMail(name, email, message) {
+    const serviceID = "service_vv1aoua"; 
+    const templateID = "template_ezsew2r"; 
+    const publicKey = "dLZTj0d5O9tacoaWO"; 
 
-    emailjs.send("service_vv1aoua", "template_ezsew2r", params)
-      .then(() => alert("Email sent successfully"))
-      .catch(error => {
-        console.error("Error sending email:", error);
-        showMessage("Failed to send email. Try again later.", "red");
-      });
+    const data = {
+      service_id: serviceID,
+      template_id: templateID,
+      user_id: publicKey,
+      template_params: {
+        name: name,
+        email: email,
+        message: message,
+      },
+    };
+
+    const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      throw new Error("Email could not be sent");
+    }
   }
+});
 
   // Testimonial Auto-Switch
   const testimonials = document.querySelectorAll(".testimonial");
@@ -70,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (testimonials.length > 0) {
     setInterval(showNextTestimonial, 2000);
   }
-});
 
 
-  
+
